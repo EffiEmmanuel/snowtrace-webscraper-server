@@ -10,7 +10,7 @@ let io; // Socket.io instance
 const initCronJobs = (server, io) => {
   console.log("CRON JOB started");
   // Schedule the cron job to run every 30 minutes
-  cron.schedule("*/5 * * * *", async () => {
+  cron.schedule("*/30 * * * *", async () => {
     try {
       // Fetch updated med gas prices from snowtrace.io using web scraping with puppeteer
       const updatedPrices = await medGasPriceService.scrapeMedGasPrices();
